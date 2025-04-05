@@ -1,27 +1,27 @@
-import React from 'react';
-
-const Images = [
-  {
-    src: 'https://via.placeholder.com/300x200',
-    title: 'Lost Wallet',
-    description: 'Black leather wallet found near the library.',
-  },
-  {
-    src: 'https://via.placeholder.com/300x200',
-    title: 'Water Bottle',
-    description: 'Stainless steel bottle left in the classroom.',
-  },
-  {
-    src: 'https://via.placeholder.com/300x200',
-    title: 'Earbuds',
-    description: 'White wireless earbuds dropped in the hallway.',
-  },
-];
+import React, { useState } from 'react';
 
 const Lostitems = () => {
+  const [images, setImages] = useState([
+    {
+      src: 'https://via.placeholder.com/300x200',
+      title: 'Lost Wallet',
+      description: 'Black leather wallet found near the library.',
+    },
+    {
+      src: 'https://via.placeholder.com/300x200',
+      title: 'Water Bottle',
+      description: 'Stainless steel bottle left in the classroom.',
+    },
+    {
+      src: 'https://via.placeholder.com/300x200',
+      title: 'Earbuds',
+      description: 'White wireless earbuds dropped in the hallway.',
+    },
+  ]);
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
-      {Images.map((item, index) => (
+      {images.map((item, index) => (
         <div
           key={index}
           className="flex flex-col bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-all duration-200"
