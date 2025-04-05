@@ -7,6 +7,7 @@ import Loader from "./components/Loader";
 // Lazy-loaded components
 const LoginPage = lazy(() => import("./pages/auth/Login"));
 const Register = lazy(() => import("./pages/auth/Register"));
+const Main = lazy(() => import("./pages/Main"));
 
 
 // const Profile = lazy(() => import("./Profile"));/
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
 
           <Route path="/register" element={<Register />} />
+          <Route path="/main" element={<Main />}/>
 
           </Routes>
       </Suspense>
