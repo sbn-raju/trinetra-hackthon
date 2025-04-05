@@ -13,6 +13,12 @@ const LoginPage = lazy(() => import("./pages/auth/Login"));
 const Register = lazy(() => import("./pages/auth/Register"));
 const DashboardLayout = lazy(() => import("./layouts/DashboardLayout"));
 
+const Main = lazy(() => import("./pages/Main"));
+
+
+
+const Founditems=lazy(()=> import("./pages/Founditems"));
+const Lostitems=lazy(()=> import("./pages/Lostitems"));
 
 // const Profile = lazy(() => import("./Profile"));/
 
@@ -22,13 +28,14 @@ const App = () => {
   const role = sessionStorage.getItem("userRole");
 
 
-  return (
+  return (  
     <Router>
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
 
           <Route path="/register" element={<Register />} />
+
 
           <Route
             path="/"
@@ -44,6 +51,13 @@ const App = () => {
             <Route path="/verify-item" element={<VerificationForm/>}/>
           </Route>
 
+
+
+          <Route path="/main" element={<Main />}/>
+
+
+           <Route path='/founditems' element={<Founditems/>}/>
+           <Route path='/lostitems' element={<Lostitems/>}/>
 
 
           </Routes>
